@@ -97,8 +97,6 @@ how to use polyRecover like ecrecover:
         bytes32 script_hash = output[0];
         require(script_hash.length == 32, "invalid recovered script hash length");
 
-        recover_address = address(uint160(uint256(recentRecoverScriptHash) >> 96));
-
-        return recover_address;
+        return address(uint160(uint256(recentRecoverScriptHash) >> 96));
     }
 ```
